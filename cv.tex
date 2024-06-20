@@ -29,6 +29,16 @@
 
 % testing multibib
 \usepackage{multibib}
+
+% make the headers for multibibs be subheading sized instead
+\usepackage{etoolbox}
+\BeforeBeginEnvironment{thebibliography}{%
+  \let\origsection\section% save the original definition of \section
+  \let\section\subsection%  make \section behave like \subsection
+}
+\AfterEndEnvironment{thebibliography}{%
+  \let\section\origsection% restore the original definition of \section
+}
 \newcites{papers}{Papers}
 \newcites{reports}{Technical Reports}
 \newcites{patents}{Patents}
