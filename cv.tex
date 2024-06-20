@@ -27,17 +27,42 @@
 \usepackage[left=0.75in,top=0.6in,right=0.75in,bottom=0.6in]{geometry} % Document margins
 \usepackage{bibentry}
 
+% testing multibib
+\usepackage{multibib}
+\newcites{papers}{Papers}
+\newcites{reports}{Technical Reports}
+\newcites{patents}{Patents}
+
 \name{Trevor Ablett} % Your name
 \address{University of Toronto Institute for Aerospace Studies \\ 4925 Dufferin St. \\ Toronto, ON M3H 5T6} % Your address
 %\address{123 Pleasant Lane \\ City, State 12345} % Your secondary addess (optional)
-\address{(647)~$\cdot$~997~$\cdot$~8738 \\ trevor.ablett@robotics.utias.utoronto.ca \\ trevorablett.github.io} % Your phone number and email
+\address{(647)~$\cdot$~997~$\cdot$~8738 \\ trevor.ablett@robotics.utias.utoronto.ca \\ \url{trevorablett.github.io/research}} % Your phone number and email
 
 \begin{document}
 	
-\vspace{-2.5cm}
+% \vspace{-6cm}
 
-\bibliographystyle{IEEEcaps}
-\nobibliography{refs} % NOTE: to get this to work, when you modify the bib, switch this to \bibliography{refs} then back to \nobibliography{refs}
+% testing multibib
+\nocitepapers{
+    2024_Ablett_vpace,
+    2024_Ablett_Push,
+    limoyoWorkingBackwardsLearning2023,
+    2023_Ablett_Learning,
+    2022_Limoyo_Learning,
+    2021_Ablett_Learning,
+    ablettSeeingAllAngles2021,
+    2019_Maric_Fast,
+    limoyo2018automatic}
+
+\nocitereports{
+    ablettFightingFailuresFIRE2020}
+
+\nocitepatents{
+    calibration_patent,
+    callisto_patent}
+
+% \bibliographystyle{IEEEcaps}
+% \nobibliography{refs} % NOTE: to get this to work, when you modify the bib, switch this to \bibliography{refs} then back to \nobibliography{refs}
 %\bibliography{refs}
 
 %----------------------------------------------------------------------------------------
@@ -73,52 +98,94 @@ Summa cum laude, Overall GPA: 3.9/4.0
 %----------------------------------------------------------------------------------------
 
 \begin{rSection}{Publications}
-	
-	\begin{enumerate}
-		\item \bibentry{2024_Ablett_Push}
-		\item \bibentry{limoyoWorkingBackwardsLearning2023}
-		\item \bibentry{2023_Ablett_Learning}
-		\item \bibentry{2022_Limoyo_Learning}
-		\item \bibentry{2021_Ablett_Learning}
-		\item \bibentry{ablettSeeingAllAngles2021}
-		\item \bibentry{2019_Maric_Fast}
-		\item \bibentry{limoyo2018automatic}
-	\end{enumerate}
-	
-	
-	%------------------------------------------------
-	
+
+\bibliographystylepapers{IEEEcaps}
+\bibliographypapers{refs}
+
+\bibliographystylereports{IEEEcaps}
+\bibliographyreports{refs}
+
+\bibliographystylepatents{IEEEcaps}
+\bibliographypatents{refs}
+
 \end{rSection}
+
+% \begin{rEnumSection}{Publications}
+
+% \item \bibentry{2024_Ablett_vpace}
+% \item \bibentry{2024_Ablett_Push}
+% \item \bibentry{limoyoWorkingBackwardsLearning2023}
+% \item \bibentry{2023_Ablett_Learning}
+% \item \bibentry{2022_Limoyo_Learning}
+% \item \bibentry{2021_Ablett_Learning}
+% \item \bibentry{ablettSeeingAllAngles2021}
+% \item \bibentry{2019_Maric_Fast}
+% \item \bibentry{limoyo2018automatic}
+    
+% \end{rEnumSection}
+
+% \begin{rSection}{Publications}
+	
+% 	\begin{enumerate}
+%             \item \bibentry{2024_Ablett_vpace}
+% 		\item \bibentry{2024_Ablett_Push}
+% 		\item \bibentry{limoyoWorkingBackwardsLearning2023}
+% 		\item \bibentry{2023_Ablett_Learning}
+% 		\item \bibentry{2022_Limoyo_Learning}
+% 		\item \bibentry{2021_Ablett_Learning}
+% 		\item \bibentry{ablettSeeingAllAngles2021}
+% 		\item \bibentry{2019_Maric_Fast}
+% 		\item \bibentry{limoyo2018automatic}
+% 	\end{enumerate}
+	
+	
+% 	%------------------------------------------------
+	
+% \end{rSection}
 
 %----------------------------------------------------------------------------------------
 %	TECHNICAL REPORTS SECTION
 %----------------------------------------------------------------------------------------
 
-\begin{rSection}{Technical Reports}
+% \begin{rEnumSection}{Technical Reports}
+
+% \item \bibentry{ablettFightingFailuresFIRE2020}
+    
+% \end{rEnumSection}
+
+
+% \begin{rSection}{Technical Reports}
 	
-	\begin{enumerate}
-		\item \bibentry{ablettFightingFailuresFIRE2020}
-	\end{enumerate}
+% 	\begin{enumerate}
+% 		\item \bibentry{ablettFightingFailuresFIRE2020}
+% 	\end{enumerate}
 	
-	%------------------------------------------------
+% 	%------------------------------------------------
 	
-\end{rSection}
+% \end{rSection}
 
 %----------------------------------------------------------------------------------------
 %	PATENTS SECTION
 %----------------------------------------------------------------------------------------
 
-\begin{rSection}{Patents}
+% \begin{rEnumSection}{Patents}
+
+% \item \bibentry{calibration_patent}
+% \item \bibentry{callisto_patent}
+    
+% \end{rEnumSection}
+
+% \begin{rSection}{Patents}
 	
-	\begin{enumerate}
-		\item \bibentry{calibration_patent}
-		\item \bibentry{callisto_patent}
-	\end{enumerate}
+% 	\begin{enumerate}
+% 		\item \bibentry{calibration_patent}
+% 		\item \bibentry{callisto_patent}
+% 	\end{enumerate}
 	
 	
-	%------------------------------------------------
+% 	%------------------------------------------------
 	
-\end{rSection}
+% \end{rSection}
 
 %----------------------------------------------------------------------------------------
 %	AWARDS SECTION

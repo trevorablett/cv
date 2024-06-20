@@ -107,6 +107,27 @@
 }
 
 %----------------------------------------------------------------------------------------
+%	SECTION FORMATTING WITH NUMBERS
+%----------------------------------------------------------------------------------------
+
+% Defines the rSection environment for the large sections within the CV
+\newenvironment{rEnumSection}[2]{ % 1 input argument - section name
+  \sectionskip
+  \MakeUppercase{\bf #1} % Section title
+  \sectionlineskip
+  \hrule % Horizontal line
+  \begin{enumerate}
+  % \begin{list}{}{ % List for each individual item in the section
+  %   \setlength{\leftmargin}{1.5em} % Margin within the section
+  % }
+  \item[]
+}{  
+  \end{enumerate}
+% }{
+%   \end{list}
+}
+
+%----------------------------------------------------------------------------------------
 %	WORK EXPERIENCE FORMATTING
 %----------------------------------------------------------------------------------------
 
