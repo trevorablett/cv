@@ -1,0 +1,90 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Medium Length Professional CV
+% LaTeX Template
+% Version 2.0 (8/5/13)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Trey Hunner (http://www.treyhunner.com/)
+%
+% Important note:
+% This template requires the resume.cls file to be in the same directory as the
+% .tex file. The resume.cls file provides the resume style used for structuring the
+% document.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+% usenames and dvipsnames gives access to 68 dvips colors
+% see https://en.wikibooks.org/wiki/LaTeX/Colors
+\documentclass[usenames, dvipsnames]{resume} % Use the custom resume.cls style
+
+\usepackage[left=0.75in,top=0.6in,right=0.75in,bottom=0.6in]{geometry} % Document margins
+\usepackage{bibentry}
+
+% testing multibib
+\usepackage{multibib}
+
+\usepackage[utf8]{inputenc}
+\usepackage[empty]{fullpage}
+% \usepackage[hidelinks]{hyperref}
+\usepackage{graphicx}
+\usepackage{fontawesome5}
+\usepackage{eso-pic}
+% \usepackage{charter}
+
+% make the headers for multibibs be subheading sized instead
+\usepackage{etoolbox}
+\BeforeBeginEnvironment{thebibliography}{%
+  \let\origsection\section% save the original definition of \section
+  \let\section\subsection%  make \section behave like \subsection
+}
+\AfterEndEnvironment{thebibliography}{%
+  \let\section\origsection% restore the original definition of \section
+}
+\newcites{papers}{Papers}
+\newcites{reports}{Technical Reports}
+\newcites{patents}{Patents}
+
+\name{Trevor Ablett} % Your name
+\address{University of Toronto Institute for Aerospace Studies \\ 4925 Dufferin St. \\ Toronto, ON M3H 5T6} % Your address
+%\address{123 Pleasant Lane \\ City, State 12345} % Your secondary addess (optional)
+\address{(647)~$\cdot$~997~$\cdot$~8738 \\ trevor.ablett@gmail.com \\ \url{https://trevorablett.github.io}} % Your phone number and email
+
+\input{letter-info}
+
+\begin{document}
+	
+\today\\
+
+\vspace{-0.1in}\recipient\\
+\company\\
+% \street\\
+% \city, \state\ \zip\\
+\city, \state\\
+
+\vspace{-0.1in}\greeting\ \recipient,\\
+
+% Body
+\vspace{-0.1in}\setlength\parindent{24pt}
+\noindent\input{letter-body}
+
+% Closer
+\vspace{0.1in}
+\vfill
+
+\begin{flushright}
+\closer,
+
+\vspace{-0.1in}\includegraphics[width=1.5in]{signature.png}\vspace{-0.1in}
+
+\myname\\
+\mytitle
+\end{flushright}
+
+\end{document}
